@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="ImportTextIntoDB"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{0E22ECFA-7DD4-4C4A-8B27-7E918A9894E7}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{222CE3FA-1929-429C-AD69-AAC9CD612685}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -478,32 +478,44 @@
         <NodeLayout
           Size="135,42"
           Id="Package\Import all teh apps\List of apps"
-          TopLeft="163,25" />
+          TopLeft="38,15" />
         <NodeLayout
           Size="173,42"
           Id="Package\Import all teh apps\OLE DB Destination"
-          TopLeft="151.5,114.5" />
+          TopLeft="241.5,135.5" />
         <EdgeLayout
           Id="Package\Import all teh apps.Paths[Flat File Source Output]"
-          TopLeft="234.25,67">
+          TopLeft="105.5,57">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.5"
+              EndConnector="222.5,78.5"
               Start="0,0"
-              End="0,40">
+              End="222.5,71">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40" />
+                    End="0,35.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.25"
+                    Point2="0,39.25"
+                    Point3="4,39.25" />
+                  <mssgle:LineSegment
+                    End="218.5,39.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="218.5,39.25"
+                    Point2="222.5,39.25"
+                    Point3="222.5,43.25" />
+                  <mssgle:LineSegment
+                    End="222.5,71" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,12,16,16"
+              BoundingBox="103.25,44.25,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
