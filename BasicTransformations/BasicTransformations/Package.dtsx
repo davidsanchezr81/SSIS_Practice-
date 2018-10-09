@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{618CCC3B-CB10-4C8D-BD64-4A470FD57FBF}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{80CC2318-AC1E-4C4D-81F6-B054EB834317}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -237,17 +237,17 @@
               </outputs>
             </component>
             <component
-              refId="Package\Import rows from Excel workout into series table\Sample 3 rows"
-              componentClassID="Microsoft.RowSampling"
-              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
-              name="Sample 3 rows">
+              refId="Package\Import rows from Excel workout into series table\Sample 10 percent"
+              componentClassID="Microsoft.PctSampling"
+              contactInfo="Percentage Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Randomly samples a percentage of rows from an input data flow. For example, use it twice to help create a data mining model: create one sample for training the model and another sample for testing the model."
+              name="Sample 10 percent">
               <properties>
                 <property
                   dataType="System.Int32"
-                  description="Specifies the number of rows in the sample."
+                  description="Specifies the percentage size of the sample."
                   expressionType="Notify"
-                  name="SamplingValue">3</property>
+                  name="SamplingValue">10</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the seed for the random number generator."
@@ -255,199 +255,36 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Inputs[Row Sampling Input 1]"
-                  name="Row Sampling Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Inputs[Row Sampling Input 1].Columns[Series ]"
-                      cachedDataType="r8"
-                      cachedName="Series "
-                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Series ]" />
-                    <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Inputs[Row Sampling Input 1].Columns[Winner ]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Winner "
-                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Winner ]" />
-                    <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Inputs[Row Sampling Input 1].Columns[Start date]"
-                      cachedDataType="date"
-                      cachedName="Start date"
-                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Start date]" />
-                    <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Inputs[Row Sampling Input 1].Columns[Finish date]"
-                      cachedDataType="date"
-                      cachedName="Finish date"
-                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Finish date]" />
-                    <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Inputs[Row Sampling Input 1].Columns[Gender]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Gender"
-                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Gender]" />
-                  </inputColumns>
+                  refId="Package\Import rows from Excel workout into series table\Sample 10 percent.Inputs[Percentage Sampling Input 1]"
+                  name="Percentage Sampling Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows]"
-                  name="Selected rows">
+                  refId="Package\Import rows from Excel workout into series table\Sample 10 percent.Outputs[Selected data]"
+                  exclusionGroup="1"
+                  name="Selected data"
+                  synchronousInputId="Package\Import rows from Excel workout into series table\Sample 10 percent.Inputs[Percentage Sampling Input 1]">
                   <properties>
                     <property
                       dataType="System.Boolean"
                       description="Output for rows in the sample"
                       name="Selected">true</property>
                   </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Series ]"
-                      dataType="r8"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Series ]"
-                      name="Series ">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Series ]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Winner ]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Winner ]"
-                      name="Winner ">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Winner ]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Start date]"
-                      dataType="date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Start date]"
-                      name="Start date">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Start date]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Finish date]"
-                      dataType="date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Finish date]"
-                      name="Finish date">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Finish date]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Gender]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Gender]"
-                      name="Gender">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Gender]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows]"
-                  name="Unselected rows">
+                  refId="Package\Import rows from Excel workout into series table\Sample 10 percent.Outputs[Unselected data]"
+                  exclusionGroup="1"
+                  name="Unselected data"
+                  synchronousInputId="Package\Import rows from Excel workout into series table\Sample 10 percent.Inputs[Percentage Sampling Input 1]">
                   <properties>
                     <property
                       dataType="System.Boolean"
                       description="Output for rows in the sample"
                       name="Selected">false</property>
                   </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Series ]"
-                      dataType="r8"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Series ]"
-                      name="Series ">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Series ]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Winner ]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Winner ]"
-                      name="Winner ">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Winner ]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Start date]"
-                      dataType="date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Start date]"
-                      name="Start date">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Start date]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Finish date]"
-                      dataType="date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Finish date]"
-                      name="Finish date">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Finish date]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Gender]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Gender]"
-                      name="Gender">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Gender]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -462,20 +299,14 @@
               <inputs>
                 <input
                   refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 2]"
-                  dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 2">
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1].Columns[Series ]"
+                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 2].Columns[Series ]"
                       cachedDataType="r8"
                       cachedName="Series "
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Series ]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Series ]">
                       <properties>
                         <property
                           containsID="true"
@@ -485,11 +316,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1].Columns[Winner ]"
+                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 2].Columns[Winner ]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Winner "
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Winner ]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Winner ]">
                       <properties>
                         <property
                           containsID="true"
@@ -499,10 +330,10 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1].Columns[Start date]"
+                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 2].Columns[Start date]"
                       cachedDataType="date"
                       cachedName="Start date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Start date]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Start date]">
                       <properties>
                         <property
                           containsID="true"
@@ -512,10 +343,10 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1].Columns[Finish date]"
+                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 2].Columns[Finish date]"
                       cachedDataType="date"
                       cachedName="Finish date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Finish date]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Finish date]">
                       <properties>
                         <property
                           containsID="true"
@@ -525,11 +356,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1].Columns[Gender]"
+                      refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 2].Columns[Gender]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Gender"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows].Columns[Gender]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Gender]">
                       <properties>
                         <property
                           containsID="true"
@@ -539,6 +370,13 @@
                       </properties>
                     </inputColumn>
                   </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -589,20 +427,14 @@
               <inputs>
                 <input
                   refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 2]"
-                  dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 2">
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1].Columns[Series ]"
+                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 2].Columns[Series ]"
                       cachedDataType="r8"
                       cachedName="Series "
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Series ]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Series ]">
                       <properties>
                         <property
                           containsID="true"
@@ -612,11 +444,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1].Columns[Winner ]"
+                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 2].Columns[Winner ]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Winner "
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Winner ]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Winner ]">
                       <properties>
                         <property
                           containsID="true"
@@ -626,10 +458,10 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1].Columns[Start date]"
+                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 2].Columns[Start date]"
                       cachedDataType="date"
                       cachedName="Start date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Start date]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Start date]">
                       <properties>
                         <property
                           containsID="true"
@@ -639,10 +471,10 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1].Columns[Finish date]"
+                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 2].Columns[Finish date]"
                       cachedDataType="date"
                       cachedName="Finish date"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Finish date]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Finish date]">
                       <properties>
                         <property
                           containsID="true"
@@ -652,11 +484,11 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1].Columns[Gender]"
+                      refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 2].Columns[Gender]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Gender"
-                      lineageId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows].Columns[Gender]">
+                      lineageId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output].Columns[Gender]">
                       <properties>
                         <property
                           containsID="true"
@@ -666,6 +498,13 @@
                       </properties>
                     </inputColumn>
                   </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -710,19 +549,19 @@
           <paths>
             <path
               refId="Package\Import rows from Excel workout into series table.Paths[Excel Source Output]"
-              endId="Package\Import rows from Excel workout into series table\Sample 3 rows.Inputs[Row Sampling Input 1]"
+              endId="Package\Import rows from Excel workout into series table\Sample 10 percent.Inputs[Percentage Sampling Input 1]"
               name="Excel Source Output"
               startId="Package\Import rows from Excel workout into series table\List of X-Factor Series.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Import rows from Excel workout into series table.Paths[Selected rows]"
-              endId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 1]"
-              name="Selected rows"
-              startId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Selected rows]" />
+              refId="Package\Import rows from Excel workout into series table.Paths[Selected data]"
+              endId="Package\Import rows from Excel workout into series table\Selected data.Inputs[Union All Input 2]"
+              name="Selected data"
+              startId="Package\Import rows from Excel workout into series table\Sample 10 percent.Outputs[Selected data]" />
             <path
-              refId="Package\Import rows from Excel workout into series table.Paths[Unselected rows]"
-              endId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 1]"
-              name="Unselected rows"
-              startId="Package\Import rows from Excel workout into series table\Sample 3 rows.Outputs[Unselected rows]" />
+              refId="Package\Import rows from Excel workout into series table.Paths[Unselected data]"
+              endId="Package\Import rows from Excel workout into series table\Unselected data.Inputs[Union All Input 2]"
+              name="Unselected data"
+              startId="Package\Import rows from Excel workout into series table\Sample 10 percent.Outputs[Unselected data]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -813,59 +652,23 @@
           Id="Package\Import rows from Excel workout into series table\Unselected data"
           TopLeft="576,324" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Import rows from Excel workout into series table\Sample 3 rows"
-          TopLeft="418,204" />
-        <EdgeLayout
-          Id="Package\Import rows from Excel workout into series table.Paths[Selected rows]"
-          TopLeft="493,246">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-115.5,86"
-              Start="0,0"
-              End="-115.5,78.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39"
-                    Point2="0,43"
-                    Point3="-4,43" />
-                  <mssgle:LineSegment
-                    End="-111.5,43" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-111.5,43"
-                    Point2="-115.5,43"
-                    Point3="-115.5,47" />
-                  <mssgle:LineSegment
-                    End="-115.5,78.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-97.73623046875,48,62.596484375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="169,42"
+          Id="Package\Import rows from Excel workout into series table\Sample 10 percent"
+          TopLeft="402,210" />
         <EdgeLayout
           Id="Package\Import rows from Excel workout into series table.Paths[Excel Source Output]"
-          TopLeft="489.5,173">
+          TopLeft="486.25,173">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31"
+              EndConnector="0,37"
               Start="0,0"
-              End="0,23.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -875,38 +678,74 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import rows from Excel workout into series table.Paths[Unselected rows]"
-          TopLeft="516.666666666667,246">
+          Id="Package\Import rows from Excel workout into series table.Paths[Selected data]"
+          TopLeft="486.5,252">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="137.333333333333,78"
+              EndConnector="-109,80"
               Start="0,0"
-              End="137.333333333333,70.5">
+              End="-109,72.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.6939313984169" />
+                    End="0,36" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.6939313984169"
-                    Point2="0,31.6939313984169"
-                    Point3="4,31.6939313984169" />
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="-4,40" />
                   <mssgle:LineSegment
-                    End="133.333333333333,31.6939313984169" />
+                    End="-105,40" />
                   <mssgle:CubicBezierSegment
-                    Point1="133.333333333333,31.6939313984169"
-                    Point2="137.333333333333,31.6939313984169"
-                    Point3="137.333333333333,35.6939313984169" />
+                    Point1="-105,40"
+                    Point2="-109,40"
+                    Point3="-109,44" />
                   <mssgle:LineSegment
-                    End="137.333333333333,70.5" />
+                    End="-109,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="23.1654361979167,36.6939313984169,91.0024609375,16"
+              BoundingBox="-93.49701171875,45,77.9940234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import rows from Excel workout into series table.Paths[Unselected data]"
+          TopLeft="513.333333333333,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="140.666666666667,72"
+              Start="0,0"
+              End="140.666666666667,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2051582649472" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2051582649472"
+                    Point2="0,28.2051582649472"
+                    Point3="4,28.2051582649472" />
+                  <mssgle:LineSegment
+                    End="136.666666666667,28.2051582649472" />
+                  <mssgle:CubicBezierSegment
+                    Point1="136.666666666667,28.2051582649472"
+                    Point2="140.666666666667,28.2051582649472"
+                    Point3="140.666666666667,32.2051582649472" />
+                  <mssgle:LineSegment
+                    End="140.666666666667,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.8213216145833,33.2051582649472,89.0240234375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
